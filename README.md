@@ -33,12 +33,12 @@ npm run serve
 # go to node folder
 cd node
 
-#create config folder then put the fbServiceAccountKey.json file into this folder 
+# create config folder then put the fbServiceAccountKey.json file into this folder 
 
 # install dependencies
 npm install
 
-#start localhost server
+# start localhost server
 node index.js
 
 ## Built with
