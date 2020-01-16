@@ -25,7 +25,7 @@ npm run serve
 - [vue-google-autocomplete](https://github.com/olefirenko/vue-google-autocomplete/) - A Vue.js autosuggest component for the Google Places API. 
 - [google map](https://cloud.google.com/maps-platform/) - Google api to provide map and route
 - [Vuex](https://vuex.vuejs.org/) - The state manager for Vue.js
-- [vue-template-compiler] (https://github.com/vuejs/vue/tree/dev/packages/vue-template-compiler/) - This package can be used to pre-compile Vue 2.0 templates into render functions to avoid runtime-compilation overhead and CSP restrictions.
+- [vue-template-compiler](https://github.com/vuejs/vue/tree/dev/packages/vue-template-compiler/) - This package can be used to pre-compile Vue 2.0 templates into render functions to avoid runtime-compilation overhead and CSP restrictions.
 
 
 ## Build Setup Node: 
