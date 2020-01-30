@@ -7,7 +7,7 @@
     <input type="email" id="inputEmail" v-model="email" class="form-control" placeholder="Email address" required autofocus>
     <label for="inputPassword" class="sr-only">Password</label>
     <input type="password" id="inputPassword" v-model="password" class="form-control" placeholder="Password" required>
-    <button class="btn btn-lg btn-primary btn-block" type="submit" :disabled="submitted === true" >Sign in</button>
+    <button class="btn btn-lg btn-primary btn-block" type="submit" :disabled="submitted === true" >{{text}}</button>
     <div v-if="error" class="my-2 alert alert-danger" role="alert">
       {{error}}
     </div>
@@ -21,12 +21,14 @@
 				email : "",
         password : "",
         error : "",
-        submitted: false
+        submitted: false,
+        text : "Sign in"
       }
 		},
 		methods: {
 		 	login: function () {
-          this.submitted = true;
+          this.submitted = true
+          this.text = "Sending"
 		   		let email = this.email 
 		   		let password = this.password
 		   		this.$store.dispatch('login', { email, password })
@@ -35,6 +37,7 @@
            })
 		   		.catch((error)=>{
             this.submitted = false
+            this.text = "Sign in"
             this.error = error
            })
 		   	}
