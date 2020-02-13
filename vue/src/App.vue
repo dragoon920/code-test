@@ -26,12 +26,12 @@
           <form class="form-inline my-2 my-md-0">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item" v-if="isLoggedIn">
-                <a @click="logout" class="nav-link">Logout</a>
+                <a @click="logout" href ="" class="nav-link">Logout</a>
               </li>
               <li class="nav-item"  v-else>
                 <router-link :class="[currentPage.includes('/login') ? activeClass:'','nav-link' ]" to="/login">Login</router-link>
               </li>
-              <li class="nav-item">
+              <li class="nav-item" v-if="isLoggedIn===false">
                 <router-link class="nav-link" to="/register">Register</router-link>
               </li>
             </ul>

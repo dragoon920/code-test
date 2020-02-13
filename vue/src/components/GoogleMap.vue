@@ -22,32 +22,19 @@ export default {
     });
   },
   methods: {
-    setRoute: function ( position , destinationPlace) {
+    setRoute: function ( originPlace , destinationPlace) {
       this.map = new google.maps.Map(document.getElementById('map'), {
         mapTypeId: google.maps.MapTypeId.ROADMAP
       });
       this.destinationPlace = '';
       this.destinationPlace = destinationPlace;
       //set origin place by latitude and longtitude
-      let originPlace = new google.maps.LatLng(position.coords.latitude , position.coords.longitude)
+      //let originPlace = new google.maps.LatLng(position.coords.latitude , position.coords.longitude)
       var directionsService = new google.maps.DirectionsService();
       var directionsDisplay = new google.maps.DirectionsRenderer();
       directionsDisplay.setMap(this.map);
-      var geocoder = new google.maps.Geocoder;
-      geocoder.geocode({'latLng': originPlace}, function (locations, status) {
-        if (status == google.maps.GeocoderStatus.OK) {
-          for (var location of locations) {
-            if (location.types.indexOf("locality") != -1  ) {
-              this.originPlace = location.formatted_address;
-              this.$emit("setValue", { originPlace:this.originPlace  });
-              console.log('Your location is: ' + this.originPlace);
-              break;
-            }
-          };
-        }
-      }.bind(this));
-
-
+      document.getElementById("panel").innerHTML = "";
+      directionsDisplay.setPanel(document.getElementById('panel'));
       var request = {
         origin: originPlace, 
         destination: destinationPlace,

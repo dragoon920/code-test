@@ -69,7 +69,7 @@ export default new Vuex.Store({
                 var token = getIdTokenResult.token
                 const user = 'true'
                 //This is for testing purpose, get id token to check backend API
-                console.log(token)
+                //console.log(token)
                 const admin = getIdTokenResult.claims.admin 
                 // setup token, user login status and admin flag 
                 localStorage.setItem('token', token)
